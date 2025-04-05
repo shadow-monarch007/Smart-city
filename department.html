@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Smart City Planner with Complaint Portal
+        </title>
+        <link href="css/bootstrap.min.css" rel="stylesheet"/>
+        <script src="css/bundle.min.js"></script>
+        <link rel="stylesheet" href="css/bootstrap-icons.css"/>
+        <style>
+            .header{
+                background-image: url(images/clean\ city.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                height: 500px;
+            }
+            .black{
+                background-color: black;
+                height: 500px;
+            }
+            .fs{
+                font-size: 60px;
+                /* padding-top: 100px; */
+            }
+            .bggreen{
+                background-color: #58B33E;
+            }
+            .green{
+                color: #58B33E;
+                font-weight: bolder;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container-fluid">
+
+                <div class="row">
+             
+                            <div class="col-md-12">
+                                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                                    <a href="index.php" class="navbar-brand px-5">Smart City Planner with Complaint Portal</a>
+                                    <button type="button" class="navbar-toggler m-3" data-bs-toggle="collapse" data-bs-target="#content">
+                                        <span class="navbar-toggler-icon"></span>
+                                    </button>
+                                    <div class="collapse navbar-collapse" id="content">
+                                        <ol class="navbar-nav text-end ms-auto me-5 pe-5">
+                                            <li class="nav-item"><a href="index.php" class="nav-link active">Home</a></li>
+                                          
+                                        </ol>
+                                    </div>
+                                </nav>
+                            </div>
+                      
+                </div>
+                
+                <div class="row">
+                    <div>
+                    <div class="col-md-12 bg-info text-center p-5 ">
+
+                        <h1 class="display-1 text-light">Department Login Form</h1>
+
+                    </div>
+                </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                    
+                <div class="card mt-2 ">
+                    <div class="card-header bg-success text-light">
+                        Login Form
+                    </div>
+                    <div class="card-body">
+                        <form action="log.php" method="POST">
+                            <!-- <div class="form-control bggreen mt-3">Username</div> -->
+                            <input type="text" name="username" class="form-control my-2"  placeholder="Username" required/>
+                            <!-- <div class="form-control bggreen mt-3">Password</div> -->
+                            <input type="password" name="password" class="form-control my-2" placeholder="Password" required/>
+                            <!-- <div class="form-control bggreen mt-3">Confirm Password</div> -->
+                            <!-- <input type="password" name="name" class="form-control my-2" placeholder="Confirm Password" required/> -->
+                            <select name="role" class="form-control my-2">
+                                <option value="Department" selected>Department</option>   
+                             <!--   <option value="Admin" selected >Admin</option>
+                               
+                                <option value="User">User</option>
+                                <option value="User">Super Admin</option>
+                                -->
+                                
+                            </select>
+                            <div class="text-center">
+                                <input type="submit" class="btn rounded-3 bggreen text-light px-3 my-3" value="Login"/>
+                                <!-- <a href="#" class="btn btn-outline-light rounded-pill btn-light bggreen text-decoration-none px-4 py-2 mx-3 mt-3" >Login</a> -->
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Clean City
+        </title>
+        <link href="css/bootstrap.min.css" rel="stylesheet"/>
+        <script src="css/bundle.min.js"></script>
+        <link rel="stylesheet" href="css/bootstrap-icons.css"/>
+        <style>
+            .header{
+                background-image: url(images/clean\ city.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                height: 500px;
+            }
+            .black{
+                background-color: black;
+                height: 500px;
+            }
+            .fs{
+                font-size: 60px;
+                /* padding-top: 100px; */
+            }
+            .bggreen{
+                background-color: #58B33E;
+            }
+            .green{
+                color: #58B33E;
+                font-weight: bolder;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container-fluid">
+
+                <div class="row">
+             
+                            <div class="col-md-12">
+                                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                                    <a href="index.php" class="navbar-brand px-5">Smart City Planner with Complaint Portal</a>
+                                    <button type="button" class="navbar-toggler m-3" data-bs-toggle="collapse" data-bs-target="#content">
+                                        <span class="navbar-toggler-icon"></span>
+                                    </button>
+                                    <div class="collapse navbar-collapse" id="content">
+                                        <ol class="navbar-nav text-end ms-auto me-5 pe-5">
+                                            <li class="nav-item"><a href="index.php" class="nav-link active">Home</a></li>
+                                            <li class="nav-item"><a href="#login" data-bs-toggle="modal" class="nav-link ">Login</a></li>
+                                          
+                                        </ol>
+                                    </div>
+                                </nav>
+                            </div>
+                      
+                </div>
+                <div class="modal fade" id="login">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header bggreen text-light">
+                                <h4 class="text-center w-100">User Login Form</h4>
+                            </div>
+                            <div class="modal-body">
+                                <form action="#" method="get">
+                                    <!-- <div class="form-control bggreen mt-3">Username</div> -->
+                                    <input type="text" name="username" class="form-control my-2"  placeholder="Username" required/>
+                                    <!-- <div class="form-control bggreen mt-3">Password</div> -->
+                                    <input type="password" name="password" class="form-control my-2" placeholder="Password" required/>
+                                    <!-- <div class="form-control bggreen mt-3">Confirm Password</div> -->
+                                    <!-- <input type="password" name="name" class="form-control my-2" placeholder="Confirm Password" required/> -->
+                                    <select name="role" class="form-control my-2">
+                                        <option value="User" selected>User</option>
+                                       <!-- <option value="Admin">Admin</option>
+                                        <option value="Department">Department</option>
+                                        <option value="User">User</option>
+                                        <option value="User">Super Admin</option>
+                                        -->
+                                        
+                                    </select>
+                                    <div class="text-center">
+                                        <input type="submit" class="btn rounded-3 bggreen text-light px-3 my-3" value="Login"/>
+                                        <!-- <a href="#" class="btn btn-outline-light rounded-pill btn-light bggreen text-decoration-none px-4 py-2 mx-3 mt-3" >Login</a> -->
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                    <div class="col-md-12 bg-success text-center p-5 ">
+
+                        <h1 class="display-1 text-light">Registration Form</h1>
+
+                    </div>
+                </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                    
+                <div class="card mt-2 ">
+                    <div class="card-header bg-success text-light">
+                        Registration Form
+                    </div>
+                    <div class="card-body">
+                            <form action="register.php" method="POST" onsubmit ="return verifyPassword()">
+                                <input type="text" name="name" class="form-control my-2" placeholder="Name" required/>
+                                <label class="ms-3">Gender: </label>
+                                <input type="radio" name="gender" class="my-2" value="Female"/> Female
+                                <input type="radio" name="gender" class="my-2" value="Male"/> Male
+                                <input type="date" name="dob" class="form-control my-2" placeholder="DOB" required/>
+                                <!-- <div class="form-control bggreen mt-3">Address</div> -->
+                                <input type="textarea" name="address" class="form-control my-2" placeholder="Address" required/>
+                                <!-- <div class="form-control bggreen mt-3">City</div> -->
+                                <input type="text" name="city" value="Mysuru" class="form-control my-2" placeholder="City" required/>
+                                <!-- <div class="form-control bggreen mt-3">Contact</div> -->
+                                <input type="tel" name="contact" pattern="[1-9]{1}[0-9]{9}" maxlength="10" class="form-control my-2"  placeholder="Contact" required/>
+                                <!-- <div class="form-control bggreen mt-3">Username</div> -->
+                                <input type="text" name="username" class="form-control my-2"  placeholder="Username" required/>
+                                <!-- <div class="form-control bggreen mt-3">Password</div> -->
+                                <!--
+                                    <input type="password" name="password"  class="form-control my-2" placeholder="Password" required/>
+                                -->
+                                <input type="password" name="password" id="psw" value=''class="form-control my-2" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required/>
+                                
+                                <span id = "message" style="color:red"> </span>
+                                <!-- <div class="form-control bggreen mt-3">Confirm Password</div> -->
+                                <input type="password" name="confirmpw" class="form-control my-2" id="cpsw" placeholder="Confirm Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required/>
+                                <div class="text-center">
+                                    <input type="submit" class="btn rounded-3 bggreen text-light px-3 my-3" value="Register"/>
+                                   <!-- <a href="register.php" class="btn btn-outline-light rounded-pill btn-light bggreen text-decoration-none px-4 py-2 mx-3 mt-3">Register</a> -->
+                                </div>
+                            </form>
+                            <div id="message">
+                                <p id="letter" class="invalid"></p>
+                                <p id="capital" class="invalid"></p>
+                                <p id="number" class="invalid"></p>
+                                <p id="length" class="invalid"></p>
+                              </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <script>
+            var myInput = document.getElementById("psw");
+            var myInputcpsw = document.getElementById("cpsw");
+            
+            var letter = document.getElementById("letter");
+            var capital = document.getElementById("capital");
+            var number = document.getElementById("number");
+            var length = document.getElementById("length");
+            
+            // When the user clicks on the password field, show the message box
+            myInput.onfocus = function() {
+              document.getElementById("message").style.display = "block";
+            }
+            
+            // When the user clicks outside of the password field, hide the message box
+            myInput.onblur = function() {
+              document.getElementById("message").style.display = "none";
+            }
+            
+            // When the user starts to type something inside the password field
+            myInput.onkeyup = function() {
+              // Validate lowercase letters
+              var lowerCaseLetters = /[a-z]/g;
+              if(myInput.value.match(lowerCaseLetters)) {
+                letter.classList.remove("invalid");
+                letter.classList.add("valid");
+              } else {
+                letter.classList.remove("valid");
+                letter.classList.add("invalid");
+            }
+            
+              // Validate capital letters
+              var upperCaseLetters = /[A-Z]/g;
+              if(myInput.value.match(upperCaseLetters)) {
+                capital.classList.remove("invalid");
+                capital.classList.add("valid");
+              } else {
+                capital.classList.remove("valid");
+                capital.classList.add("invalid");
+              }
+            
+              // Validate numbers
+              var numbers = /[0-9]/g;
+              if(myInput.value.match(numbers)) {
+                number.classList.remove("invalid");
+                number.classList.add("valid");
+              } else {
+                number.classList.remove("valid");
+                number.classList.add("invalid");
+              }
+            
+              // Validate length
+              if(myInput.value.length >= 8) {
+                length.classList.remove("invalid");
+                length.classList.add("valid");
+              } else {
+                length.classList.remove("valid");
+                length.classList.add("invalid");
+              }
+            }
+
+
+
+             // When the user clicks on the password field, show the message box
+             myInputcpsw.onfocus = function() {
+              document.getElementById("message").style.display = "block";
+            }
+            
+            // When the user clicks outside of the password field, hide the message box
+            myInputcpsw.onblur = function() {
+              document.getElementById("message").style.display = "none";
+            }
+            
+            // When the user starts to type something inside the password field
+            myInputcpsw.onkeyup = function() {
+              // Validate lowercase letters
+              var lowerCaseLetters = /[a-z]/g;
+              if(myInputcpsw.value.match(lowerCaseLetters)) {
+                letter.classList.remove("invalid");
+                letter.classList.add("valid");
+              } else {
+                letter.classList.remove("valid");
+                letter.classList.add("invalid");
+            }
+            
+              // Validate capital letters
+              var upperCaseLetters = /[A-Z]/g;
+              if(myInputcpsw.value.match(upperCaseLetters)) {
+                capital.classList.remove("invalid");
+                capital.classList.add("valid");
+              } else {
+                capital.classList.remove("valid");
+                capital.classList.add("invalid");
+              }
+            
+              // Validate numbers
+              var numbers = /[0-9]/g;
+              if(myInputcpsw.value.match(numbers)) {
+                number.classList.remove("invalid");
+                number.classList.add("valid");
+              } else {
+                number.classList.remove("valid");
+                number.classList.add("invalid");
+              }
+            
+              // Validate length
+              if(myInputcpsw.value.length >= 8) {
+                length.classList.remove("invalid");
+                length.classList.add("valid");
+              } else {
+                length.classList.remove("valid");
+                length.classList.add("invalid");
+              }
+            }
+            </script>
+    </body>
+</html>
